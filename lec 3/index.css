@@ -1,0 +1,40 @@
+.heading1{
+    background-color: saddlebrown;
+    color: white;
+    /* width: 80px; */
+    width: fit-content;
+    height: 40px;
+}
+
+#youtube-link{
+    color: red;
+    background-color: yellow;
+    text-decoration: none;
+    font-weight: bolder;
+     width: 80px;
+    height: 40px;
+}
+
+.second{
+    background-color: lightblue;
+    color: black;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+}
+
+.heading2{
+    background-color: lightgreen;
+    color: white;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+}
+
+.mainDiv{
+    width: 200px;
+    height: fit-content;
+    border: 2px solid red;
+    margin-left: 40px;
+    padding: 10px;
+}
