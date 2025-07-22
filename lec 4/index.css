@@ -1,0 +1,35 @@
+.heading {
+  background-color: red;
+}
+.headcolor {
+  color: yellow;
+}
+#heading2 {
+  color: green;
+}
+#heading3 {
+  color: blue;
+}
+.container {
+  background-color: rgb(37, 37, 37);
+  border: 2px solid red;
+  padding: 20px;
+  margin: 20px;
+}
+.container1 {
+  background-color: rgb(135, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
+  padding: 20px;
+  margin: 20px;
+}
+.container h1 {
+  display: inline-block;
+  width: 200px;
+}
+.container p {
+  display: inline;
+}
+.inner-div {
+  padding: 10px;
+  border: 2px solid blue;
+}
