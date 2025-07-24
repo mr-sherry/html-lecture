@@ -1,0 +1,31 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.div1{
+    padding: 50px 100px;
+   width: 100%;
+   height: 200px;
+   background-color: lightcoral;
+   border-width:  100px; 
+   border-color: black;
+   border-style: solid;
+
+   /* border-width: top/bottom left/right; */
+   /* top left/right bottom */
+   /* top right bottom left */
+
+/* 
+   shorthand property */
+
+   /* border: red double 10px; */
+}
+
+.heading{
+    margin-left: 867px;
+    color: white;
+    font-weight: bolder;
+    font-size: 100px;
+}
