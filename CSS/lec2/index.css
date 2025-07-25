@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  height: 300px;
+  /* border: solid 50px black; */
+  border-width: 20px 5px 40px 50px;
+  background-color: red;
+  border-color: black;
+  border-style: solid;
+  /* margin: 100px 10px 200px 200px; */
+  /* padding: 80px 10px 180px 200px; */
+
+
+
+  100%+20px+2px=
+  /* border-color: black;
+  border-width: 1px;
+  border-style: solid; */
+}
+.heading{
+    margin: 40px;
+    padding: 30px 10px 20px 239px;
+    font-size: 80px;
+    font-weight: 900;
+    color: #ff6347;
+}
+.para{
+    font-weight: 900;
+    font-style: italic;
+    color: darkgreen;
+}
