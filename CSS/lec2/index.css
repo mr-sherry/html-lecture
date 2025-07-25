@@ -17,7 +17,7 @@
 
 
 
-  100%+20px+2px=
+  /* 100%+20px+2px= */
   /* border-color: black;
   border-width: 1px;
   border-style: solid; */
@@ -33,4 +33,37 @@
     font-weight: 900;
     font-style: italic;
     color: darkgreen;
+}
+
+
+
+/* //////////////////////////////////////////////////////////////////////////// */
+
+
+.para1{
+color: #ff6347;
+background-color: aqua;
+/* text-align: center; */
+
+text-align-last: right;
+text-transform: lowercase;
+text-indent: 150px;
+/* letter-spacing: 5px; */
+line-height: 50px;
+}
+
+
+.imgg{
+    vertical-align: middle;
+}
+
+a{text-decoration:line-through ;}
+
+.heading{
+    background-color: blue;
+    color: white;
+    /* text-align: center; */
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    word-spacing: 10px;
 }
