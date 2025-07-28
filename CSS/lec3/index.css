@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.linkk:link{
+    color: rgb(255, 102, 0);
+    text-decoration: none;
+    font-style: italic;
+    background-color: blue;
+}
+
+.linkk:visited{
+color: chartreuse;}
+
+
+.linkk:hover{
+color: rgb(3, 79, 78);
+font-size: 40px;
+    background-color: blue;
+}
+
+.linkk:active{
+    color: chocolate;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+
+/* .t-table{
+    border: 2px solid black;
+} */
+
+
+table,tr,td{
+    width: 50%;
+    border: 2px solid black;
+    border-collapse: collapse;
+    vertical-align: baseline ;
+}
+
+
+.img-1{
+    visibility: visible;
+}
+
+
+.parent{
+    background-color: rgb(255, 102, 0);
+    /* width: 40%; */
+    /* max-width: 60%; */
+    min-width: 30%;
+}
+
+.parent2{
+    display: inline-block;
+    background-color: salmon;
+    min-width: 10px;
+}
+
+
+
+
+
