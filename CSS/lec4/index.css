@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+a:hover{
+    color: white;
+
+
+}
+a:link{
+    color: white;
+}
+
+.bc{
+    background-color: black;
+    /* color: white !important; */
+    /* padding: 20px; */
+}
+
+
+.bc:hover{
+    color: brown !important;
+    background-color: aqua;
+}
+
+
+
+.parent{
+    width: 100%;
+    height: fit-content;
+    background-color: blue;
+    position: relative;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    border: 2px solid yellow;
+}
+
+
+.one{
+    background-color: aqua;
+}
+.two{
+    background-color: rgb(103, 89, 145);
+position: relative;
+top: 0px;
+left: 0;
+
+
+}
+.three{
+    background-color: rgb(255, 55, 0);
+}
+.four{
+    background-color: rgb(255, 0, 140);
+}
+.parent2{
+    height: 1000px;
+    width: 100%;
+    background-color: black;
+}
