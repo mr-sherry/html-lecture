@@ -1,0 +1,39 @@
+.heading {
+  border: 2px solid black;
+  outline: 1px dotted red;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+.heading2 {
+  border: 2px solid black;
+  outline: 1px dotted red;
+  min-width: 500px;
+}
+.link {
+  text-decoration: line-through;
+  color: black;
+}
+.link:visited {
+  color: red;
+}
+.link:hover {
+  background-color: yellow;
+  font-size: 20px;
+}
+.link:active {
+  color: aqua;
+}
+.list {
+  list-style-type: lower-roman;
+  color: red;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.image {
+  margin: auto;
+  width: 400px;
+}
+.heading4:hover {
+  color: brown;
+  background-color: blue;
+}
