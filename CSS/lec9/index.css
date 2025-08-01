@@ -7,7 +7,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 100px;
-  height: 600px;
+  height: 100px;
   width: 900px;
   border: 2px solid red;
   /* justify-content: center; */
