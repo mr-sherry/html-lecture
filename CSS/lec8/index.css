@@ -1,0 +1,46 @@
+.parent {
+  width: 800px;
+  position: relative;
+  height: 420px;
+}
+.bg {
+  width: 800px;
+  height: 420px;
+  position: absolute;
+  top: 0;
+  background-color: rgba(240, 248, 255, 0.774);
+}
+.child1 {
+  position: absolute;
+  top: 0;
+  color: red;
+  font-size: 50px;
+}
+.child2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgb(0, 255, 72);
+  font-size: 50px;
+}
+.child3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: rgb(21, 0, 255);
+  font-size: 50px;
+}
+.child4 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: rgb(255, 0, 255);
+  font-size: 50px;
+}
+.child5 {
+  color: rgb(38, 255, 0);
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}
