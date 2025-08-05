@@ -41,19 +41,22 @@
   width: 100%;
   position: relative;
 }
-.hoverDiv {
-  width: 200px;
-  height: 200px;
-  background-color: green;
-}
 
-button {
+.menu {
+  padding: 20px;
+  border: 2px solid black;
+  width: 150px;
   display: none;
+  position: absolute;
+  bottom: -50px;
 }
-
-.hoverDiv:hover button {
-  display: inline-block;
+.hoverDiv {
+  width: 400px;
   background-color: red;
-  width: 200px;
-  height: 200px;
+  height: 100px;
+  position: relative;
+}
+.hoverDiv:hover .menu {
+  background-color: aqua;
+  display: block;
 }

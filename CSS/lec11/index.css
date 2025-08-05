@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  grid-template-columns: 50px 50px 500px 100px;
+  grid-template-rows: 200px 100px 300px;
+  /* row-gap: 20px;
+  column-gap: 40px; */
+  gap: 20px 100px;
+}
+.items {
+  border: 1px solid red;
+  background-color: green;
+}
+.items1 {
+  border: 1px solid red;
+  background-color: green;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.items2 {
+  border: 1px solid red;
+  background-color: green;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
