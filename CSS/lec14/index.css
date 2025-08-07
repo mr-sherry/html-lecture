@@ -28,3 +28,39 @@
 .four{
   background-color: rgb(255, 166, 0);
 }
+
+
+.parent2{
+  width: 100%;
+  height: 800px;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.parent21{
+  margin-top: 10px;
+  width: 100%;
+  height: 800px;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.parent21{ 
+  width: 100%;
+  height: 800px;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.child{
+  width: 200px;
+  height: 200px;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  border: 2px solid red;
+
+}
