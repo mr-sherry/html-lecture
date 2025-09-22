@@ -22,9 +22,9 @@ for (const num of data) {
 let todos = ['clean car', ''];
 
 function add(text) {}
-function deleteTodo(index, text) {}
-function edit(index) {}
+function deleteTodo(index) {}
+function edit(index, text) {}
 
 console.log(todos);
 
-add("jajaja")
+add('jajaja');
