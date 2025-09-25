@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="head" class="heading">hello text first</h1>
+    <div id="box"></div>
+    <h1 id="head1" class="heading">hello text</h1>
+    <h1 id="head2" class="heading">hello text</h1>
+    <h1 id="head3" class="heading">hello text</h1>
+
+    <p>para</p>
+    <p>para</p>
+    <p>para</p>
+    <p>para</p>
+    <p>para</p>
+
+    <!-- create form and manipulate values in input and add labels add text from js using any selector -->
+  </body>
+  <script>
+    // selecters to grap html items or elements
+    //getElementById
+    //getElementByClassName
+    //querySelector
+    //querySelectorAll
+
+    let heading = document.getElementById('head');
+    console.log('hello id', heading);
+    let div = document.getElementById('box');
+
+    //textContent
+    //innerHtml
+    heading.textContent = '<p>new heading chnaged</p>';
+    div.innerHTML =
+      '<nav><ul> <li>html</li> <li>css</li><li>js</li><li>react</li></ul></nav>';
+    console.log(div);
+
+    let headingUsingClass = document.getElementsByClassName('heading');
+    console.log('hello class', headingUsingClass);
+
+    let querySelector = document.querySelector('.heading');
+    console.log(querySelector);
+
+    let querySelectorAll = document.querySelectorAll('#head');
+    console.log(querySelectorAll);
+  </script>
+</html>
