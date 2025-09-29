@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="heading">hello text</h1>
+    <h1 class="heading">hello text</h1>
+    <h1 id="head">hello text</h1>
+    <h1>hello text</h1>
+    <h1>hello text</h1>
+
+    <div id="box-div">paragraph</div>
+  </body>
+  <script>
+    let h1 = document.getElementById('head');
+    let head1 = document.querySelectorAll('h1');
+    let headclass = document.getElementsByClassName('heading');
+    let div = document.getElementById('box-div');
+
+    let para = document.createElement('p');
+    para.textContent = 'hello this is added from js';
+    para.style.color = 'red';
+    para.style.fontSize = '30px';
+    div.appendChild(para);
+
+    let button = document.createElement('button');
+    button.textContent = 'submit';
+    button.style.color = 'red';
+    button.style.backgroundColor = 'black';
+    button.style.padding = '20px';
+    div.appendChild(button);
+
+    h1.style.color = 'red';
+    h1.style.fontSize = '200px';
+    h1.style.border = '1px solid black';
+
+    head1.forEach((element) => {
+      let str = document.createElement('strong');
+      str.textContent = ' strong!';
+      str.style.color = 'black';
+      element.appendChild(str);
+      element.style.color = 'green';
+    });
+
+    // headclass.forEach();
+    let convert = Array.from(headclass);
+
+    convert.forEach((el) => {
+      el.style.color = 'yellow';
+    });
+
+    ('create form in html and add elements in form using javascript and also create these elements using createElement also add styling');
+  </script>
+</html>
