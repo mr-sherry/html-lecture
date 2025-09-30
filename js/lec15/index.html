@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="Login"></form>
+  </body>
+  <script>
+    let form = document.getElementById('Login');
+
+    let input = document.createElement('input');
+    input.setAttribute('type', '');
+    form.appendChild(input);
+
+    let image = document.createElement('img');
+    image.setAttribute(
+      'src',
+      'https://images.unsplash.com/photo-1526779259212-939e64788e3c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D'
+    );
+    form.appendChild(image);
+    console.log(form);
+
+    image.removeAttribute('src');
+
+    function handleClick(event) {
+      event.preventDefault();
+      console.log('button clicked');
+      form.style.backgroundColor = 'green';
+    }
+
+    let button = document.createElement('button');
+    button.textContent = 'click me';
+    button.onclick = handleClick;
+    form.appendChild(button);
+
+    "change everthing using button onClick events in Functions.Change attributes and stylings of elements..."
+  </script>
+</html>
