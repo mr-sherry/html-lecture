@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main" style="width: 100%; height: 100vh; background-color: aqua">
+      <button id="btn">click</button>
+    </div>
+  </body>
+
+  <script>
+    let div = document.getElementById('main');
+    // div.setAttribute('tabindex', '0');
+    function colorChnage1() {
+      div.style.backgroundColor = 'red';
+    }
+    function colorChnage2() {
+      div.style.backgroundColor = 'green';
+    }
+    function colorChnage3() {
+      div.style.backgroundColor = 'blue';
+    }
+    function divChange() {
+      div.style.backgroundColor = 'yellow';
+    }
+    function keyPress(event) {
+      console.log(event.key);
+
+      if (event.key === 'a') {
+        colorChnage3();
+      }
+    }
+
+    div.addEventListener('click', divChange);
+    // div.addEventListener('keydown', keyPress);
+    window.addEventListener('keydown', keyPress);
+
+    let btn = document.getElementById('btn');
+    btn.addEventListener('mouseover', colorChnage1);
+    btn.addEventListener('click', colorChnage2);
+    btn.addEventListener('mouseout', colorChnage3);
+
+    //     console.log('Key pressed down:', event.key); // The character of the key pressed
+    //   console.log('Key code:', event.code); // The physical key on the keyboard
+    //   console.log('Alt key pressed:', event.altKey); // true if Alt key was held
+    //   console.log('Ctrl key pressed:', event.ctrlKey); // true if Ctrl key was held
+    //   console.log('Shift key pressed:', event.shiftKey);
+
+    //resize using addeventlistner
+  </script>
+</html>
