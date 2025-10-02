@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div style="height: 100px; border: 10px solid black"></div>
+    <button>hello</button>
+
+    <form action="">
+      <input id="input" type="text" />
+      <input type="password" />
+      <img
+        id="eyeBtn"
+        style="width: 15px; position: absolute; left: 330px; top: 152px"
+        src="./eye.png"
+        alt=""
+      />
+      <button id="btn">submit</button>
+    </form>
+
+    <script>
+      let input = document.getElementById('input');
+      let btn = document.getElementById('btn');
+      function getInputValue(e) {
+        e.preventDefault();
+        console.log(input.value);
+      }
+
+      btn.onclick = getInputValue;
+
+      let eyebtn = document.getElementById('eyeBtn');
+
+      // on eyeBtn click change eye.png to hidden.png in src using setattribute also chnage password input type to text to make password visible
+
+      //   let div = document.querySelector('div');
+      //   function color() {
+      //     let width = window.innerWidth;
+      //     console.log(width);
+      //     if (width > 1000 && width < 1200) {
+      //       div.style.backgroundColor = 'red';
+      //     } else if (width < 1000 && width > 800) {
+      //       div.style.backgroundColor = 'green';
+      //     } else if (width < 700 && width > 500) {
+      //       div.style.backgroundColor = 'yellow';
+      //       div.style.width = '300px';
+      //     }
+      //   }
+
+      //   window.addEventListener('resize', color);
+
+      //   /// class list //
+      //   let btn = document.querySelector('button');
+      //   btn.textContent = 'dark';
+      //   btn.classList.add('dark');
+      //   function toggle() {
+      //     console.log(btn.classList);
+
+      //     if (btn.classList[0] === 'dark') {
+      //       btn.classList.remove('dark');
+      //       btn.classList.add('light');
+      //     } else {
+      //       btn.classList.remove('light');
+      //       btn.classList.add('dark');
+      //     }
+      //   }
+
+      //   btn.onclick = toggle;
+    </script>
+  </body>
+</html>
