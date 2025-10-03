@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="parent">
+      <h1>child1</h1>
+      <h2>child2</h2>
+      <h3>child3</h3>
+    </div>
+
+    <script>
+      let parentDiv = document.getElementById('parent');
+      console.log(parentDiv.children[0]);
+      parentDiv.children[0].textContent = 'hello from child 1';
+
+      let child3 = document.querySelector('h3');
+      console.log(child3.parentElement);
+
+      let child2 = document.querySelector('h2');
+      console.log(child2.previousElementSibling);
+      console.log(child2.nextElementSibling);
+    </script>
+  </body>
+</html>
