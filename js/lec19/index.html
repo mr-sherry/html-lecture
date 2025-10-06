@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="">Gmail</label>
+      <input type="text" name="" id="GmailInput" />
+
+      <label for="">Password</label>
+      <input type="password" name="" id="PassInput" />
+
+      <button id="LoginBtn">Login</button>
+    </form>
+
+    <script>
+      let gmail = document.getElementById('GmailInput');
+      let password = document.getElementById('PassInput');
+      let Button = document.getElementById('LoginBtn');
+
+      function Login(e) {
+        e.preventDefault();
+        let gmailreg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let passReg =
+          /^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s])\S+$/;
+
+        if (!gmailreg.test(gmail.value)) {
+          alert('enter correct gmail');
+        } else if (!passReg.test(password.value)) {
+          alert('minimum security (length, symbol rules, allowed whitespace)');
+        } else {
+          alert('Success');
+          console.log('gmail:', gmail.value, 'password', password.value);
+        }
+      }
+
+      Button.onclick = Login;
+    </script>
+  </body>
+</html>
