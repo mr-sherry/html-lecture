@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>start</button>
+    <button id="btn1">interval</button>
+    <button id="btn2">clear</button>
+
+    <script>
+      let btn = document.querySelector('button');
+      let btn1 = document.querySelector('#btn1');
+      let btn2 = document.querySelector('#btn2');
+
+      function random() {
+        let number = Math.random();
+        setTimeout(() => {
+          console.log(number);
+        }, 2000);
+      }
+
+      btn.onclick = random;
+
+      let interval = null;
+      //   let num = 0;
+
+      function randomInter() {
+        interval = setInterval(() => {
+          let number = Math.random();
+          //   num++;
+          console.log(number);
+        }, 100);
+      }
+
+      btn1.onclick = randomInter;
+
+      btn2.onclick = () => {
+        // if (num === 10) {
+        clearInterval(interval);
+        // }
+      };
+
+      //Print a message every second, but stop printing after 5 seconds.
+//       Task Idea: Blinking Text
+
+// Repeated Action (setInterval): Make a text on the screen appear and disappear every 1 second (blinking effect).
+
+// Stop Action (setTimeout): After 5 seconds, stop the blinking and leave the text visible.
+
+// setInterval handles the repeated blink.
+
+// setTimeout stops the blinking after a few seconds.
+    </script>
+  </body>
+</html>
