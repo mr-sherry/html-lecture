@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>click</button>
+
+    <script>
+      let btn = document.querySelector('button');
+
+      function fetchdata() {
+        return new Promise((resolve, reject) => {
+          setInterval(() => {
+            let success = Math.random() > 0.5;
+
+            if (success) {
+              resolve('fetched successfully');
+            } else {
+              reject('fetch feailed');
+            }
+          }, 2000);
+        });
+      }
+
+      btn.onclick = () => {
+        fetchdata()
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+          .finally(() => {
+            alert('completed');
+          });
+      };
+    </script>
+  </body>
+</html>
