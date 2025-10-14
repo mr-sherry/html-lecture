@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="name">name:</h1>
+      <h2 id="id">id:</h2>
+      <h2 id="username">username:</h2>
+      <h2 id="repo">repos:</h2>
+      <h2 id="company">company:</h2>
+    </div>
+    <script>
+      let name = document.getElementById('name');
+      let id = document.getElementById('id');
+      let username = document.getElementById('username');
+      let repo = document.getElementById('repo');
+      let company = document.getElementById('company');
+
+      fetch('https://api.github.com/users/mr-sherry')
+        .then((res) => {
+          console.log(res);
+          return res.json();
+        })
+        .then((data) => {
+          name.textContent = data.name;
+          id.textContent = data.id;
+          username.textContent = data.login;
+          repo.textContent = data.public_repos;
+          company.textContent = data.company;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+
+        // https://dummyjson.com/users
+    </script>
+  </body>
+</html>
