@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Weather</h1>
+    <label for="">City:</label>
+    <input type="text" name="" id="" />
+    <button>Get</button>
+    <h2>City: <span id="city"></span></h2>
+    <h2>Temperature: <span id="celcius"></span>C</h2>
+    <h2>Time: <span id="time"></span></h2>
+    <h2>WindSpeed: <span id="wind"></span></h2>
+    <h2>WindDirection: <span id="winddirection"></span></h2>
+    <script>
+      let celcius = document.getElementById('celcius');
+      let time = document.getElementById('time');
+      let windSpeed = document.getElementById('wind');
+      let winddirection = document.getElementById('winddirection');
+      let city1 = document.getElementById('city');
+      let input = document.querySelector('input');
+      let btn = document.querySelector('button');
+      let city = 'multan';
+      async function fetchweather() {
+        city = input.value;
+        let latitude = null;
+        let longitude = null;
+        try {
+          let response = await fetch(
+            `https://geocoding-api.open-meteo.com/v1/search?name=${city}`
+          );
+          let data = await response.json();
+          latitude = data.results[0].latitude;
+          longitude = data.results[0].longitude;
+
+          console.log(longitude);
+        } catch (error) {
+          console.log(error);
+        }
+        try {
+          let response = await fetch(
+            `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`
+          );
+          let data = await response.json();
+          console.log(data.current_weather);
+          let weather = data.current_weather;
+          celcius.textContent = weather.temperature;
+          time.textContent = weather.time;
+          windSpeed.textContent = weather.windspeed;
+          winddirection.textContent = weather.winddirection;
+          city1.textContent = city;
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      btn.onclick = fetchweather;
+
+      ///create ui like image i added in folder and change data from input using api used above add all filds
+    </script>
+  </body>
+</html>
