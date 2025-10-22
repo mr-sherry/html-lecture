@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+
+<!-- four pages for blogging website home.html admin.html addArticle.html and articleView.html -->
+    <div class="container">
+      <h1>Expense Tracker</h1>
+      <div class="container-2">
+        <input id="input1" type="text" placeholder="Expense name" />
+        <input id="input2" type="number" placeholder="Amount" />
+        <select id="category">
+          <option value="Food">Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Bills">Bills</option>
+        </select>
+        <input id="date" type="date" />
+        <button id="addbtn">Add Expense</button>
+        <button style="display: none" id="updatebtn">Update Expense</button>
+      </div>
+      <div>
+        <table id="expenseTable">
+          <thead>
+            <tr>
+              <th>Expense Name</th>
+              <th>Amount</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <div id="footer" class="footer">
+        <div id="total" class="total">
+          Total: <span id="total">$50.00</span>
+        </div>
+        <div class="filter">
+          <label for="filter">Filter by Category:</label>
+          <select id="filter">
+            <option value="All">All</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Bills">Bills</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let input1 = document.getElementById('input1');
+      let input2 = document.getElementById('input2');
+      let category = document.getElementById('category');
+      let date = document.getElementById('date');
+      let addbtn = document.getElementById('addbtn');
+      let updatebtn = document.getElementById('updatebtn');
+      let expensetable = document.getElementById('expensetable');
+      let footer = document.getElementById('footer');
+      let filter = document.getElementById('filter');
+      let total = document.getElementById('total');
+      let tbody = document.getElementById('tbody');
+      filter.onchange = () => {
+        let filterd = values.filter((item) => {
+          return item.category === filter.value;
+        });
+
+        values = filterd;
+        mapData();
+      };
+
+      let values = [];
+
+      function getData() {
+        let data = localStorage.getItem('values');
+        let newdata = JSON.parse(data);
+        values = [];
+        values = newdata || [];
+        console.log(values);
+        console.log(filter.value);
+      }
+      getData();
+
+      function Getfunction() {
+        let obj = {
+          expenseName: '',
+          amount: '',
+          category: '',
+          date: '',
+        };
+        obj.expenseName = input1.value;
+        console.log(input1.value);
+
+        obj.amount = input2.value;
+        obj.date = date.value;
+        obj.category = category.value;
+        values.push(obj);
+
+        localStorage.setItem('values', JSON.stringify(values));
+        getData();
+        mapData();
+      }
+      addbtn.onclick = Getfunction;
+
+      function mapData() {
+        tbody.innerHTML = '';
+        let sum = 0;
+        values.map((item, index) => {
+          sum = sum + Number(item.amount);
+
+          let tableRow = document.createElement('tr');
+          let tableData1 = document.createElement('td');
+          tableData1.textContent = item.expenseName;
+          let tableData2 = document.createElement('td');
+          tableData2.textContent = item.amount;
+          let tableData3 = document.createElement('td');
+          tableData3.textContent = item.category;
+
+          let tableData4 = document.createElement('td');
+          tableData4.textContent = item.date;
+          let tableData5 = document.createElement('td');
+          let btnEdit = document.createElement('button');
+          btnEdit.textContent = 'Edit';
+          btnEdit.classList.add('edit');
+
+          let btnDelete = document.createElement('button');
+          btnDelete.textContent = 'Delete';
+          btnEdit.classList.add('delete');
+          tableData5.appendChild(btnEdit);
+          tableData5.appendChild(btnDelete);
+
+          btnDelete.onclick = () => {
+            values.splice(index, 1);
+
+            localStorage.setItem('values', JSON.stringify(values));
+            getData();
+            mapData();
+          };
+
+          btnEdit.onclick = () => {
+            input1.value = values[index].expenseName;
+            input2.value = values[index].amount;
+            date.value = values[index].date;
+            category.value = values[index].category;
+            addbtn.style.display = 'none';
+            updatebtn.style.display = 'block';
+          };
+
+          updatebtn.onclick = () => {
+            let obj = {
+              expenseName: '',
+              amount: '',
+              category: '',
+              date: '',
+            };
+            obj.expenseName = input1.value;
+            obj.amount = input2.value;
+            obj.date = date.value;
+            obj.category = category.value;
+            values[index] = obj;
+
+            localStorage.setItem('values', JSON.stringify(values));
+            getData();
+            mapData();
+          };
+
+          tableRow.appendChild(tableData1);
+          tableRow.appendChild(tableData2);
+          tableRow.appendChild(tableData3);
+          tableRow.appendChild(tableData4);
+          tableRow.appendChild(tableData5);
+          tbody.appendChild(tableRow);
+
+          return item;
+        });
+        console.log(sum);
+        total.innerHTML = `Total; $${sum}.00`;
+      }
+      mapData();
+    </script>
+  </body>
+</html>
