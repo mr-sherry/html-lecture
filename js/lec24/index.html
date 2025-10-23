@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-
-<!-- four pages for blogging website home.html admin.html addArticle.html and articleView.html -->
+    <!-- four pages for blogging website home.html admin.html addArticle.html and articleView.html -->
     <div class="container">
       <h1>Expense Tracker</h1>
       <div class="container-2">
@@ -67,6 +66,7 @@
       let filter = document.getElementById('filter');
       let total = document.getElementById('total');
       let tbody = document.getElementById('tbody');
+      let values = [];
       filter.onchange = () => {
         let filterd = values.filter((item) => {
           return item.category === filter.value;
@@ -75,8 +75,6 @@
         values = filterd;
         mapData();
       };
-
-      let values = [];
 
       function getData() {
         let data = localStorage.getItem('values');

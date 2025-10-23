@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Card layout</title>
+    <style>
+      :root {
+        --card-width: 710px;
+        --gap: 20px;
+        --img-size: 150px;
+        --border-color: #222;
+        --text-color: #111;
+      }
+
+      /* page centering */
+      body {
+        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: #fafafa;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+        color: var(--text-color);
+      }
+
+      /* outer card */
+      .card {
+        width: var(--card-width);
+        border: 2px solid var(--border-color);
+        box-sizing: border-box;
+        padding: var(--gap);
+        background: #fff;
+      }
+
+      /* row containing image + right column */
+      .card-row {
+        display: flex;
+        gap: var(--gap);
+      }
+
+      /* left image block with 20px inner margin top/left as in sketch */
+      .left {
+        /* keep image box fixed size like sketch */
+        width: var(--img-size);
+        min-width: var(--img-size);
+        height: var(--img-size);
+        background: #eee;
+        border: 2px solid #222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        font-size: 28px;
+        color: #444;
+      }
+
+      /* right column: header, time, body, link */
+      .right {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* header row: h2 left, time right */
+      .heading-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      /* small time text on the right of header */
+      .pubtime {
+        font-size: 13px;
+        color: #666;
+        margin-top: 6px; /* aligns near the h2 baseline like sketch */
+        white-space: nowrap;
+      }
+
+      /* body text */
+      .excerpt {
+        margin: 0 0 18px 0;
+        line-height: 1.6;
+        text-align: left;
+        color: #222;
+        /* limit width similar to sketch */
+      }
+
+      /* read more link style */
+      .read-more {
+        color: #1a53b8;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: auto; /* push to bottom if right column grows */
+      }
+      .read-more:hover {
+        text-decoration: underline;
+      }
+
+      /* responsive: shrink card on small screens */
+      @media (max-width: 760px) {
+        .card {
+          width: 100%;
+        }
+        .card-row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .left {
+          margin-bottom: 10px;
+        }
+        .heading-row {
+          width: 100%;
+        }
+        .pubtime {
+          margin-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="card" role="article" aria-label="Sample article card">
+      <div class="card-row">
+        <div class="left" aria-hidden="true">
+          <img width="170px" height="150px" src="./download.jpeg" alt="" />
+        </div>
+
+        <div class="right">
+          <div class="heading-row">
+            <h2 id="h2">MyHeader</h2>
+            <h3 id="h3">Author Name</h3>
+
+            <p id="para" class="excerpt">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit
+              amet pulvinar diam. Nulla facilisi. In hac habitasse platea
+              dictumst. Integer in leo sed tortor consequat cursus blandit in
+              nunc. Integer vitae augue elit. In congue fringilla augue, id
+              consequat lectus sagittis at. Nam egestas sollicitudin nunc, vitae
+              aliquam odio porta nec. Nam condimentum blandit libero, sit amet
+              at varius augue fermentum id. Nulla condimentum interdum dui, vel
+              dignissim mauris tincidunt vitae. Nullam quis nisl ut turpis
+              ullamcorper commodo. Ut at magna ligula, id euismod nisi. Proin
+              elit ante, viverra at mollis non, scelerisque eget erat.
+            </p>
+
+            <a class="read-more" href="#">Read more...</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <script>
+      let title = document.getElementById('h2');
+      let authorName = document.getElementById('h3');
+      let article = document.getElementById('para');
+
+      let posts = JSON.parse(localStorage.getItem('BlogPost'));
+      console.log(posts[0]);
+
+      let num=0;
+    //   show article which we put number in this num variable
+      title.textContent = posts[0].title;
+      authorName.textContent = posts[0].author;
+      article.textContent = posts[0].article;
+    </script>
+  </body>
+</html>
